@@ -14,6 +14,9 @@
         <th>
             Customer CVR-number
         </th>
+        <th>
+            Options
+        </th>
         <!--<th>
             Customer phonenumber
         </th>
@@ -115,6 +118,8 @@ data-bs-target="#exampleModal"
 <script>
 import axios from "axios"
 
+const API_URL = "https://localhost:44326/api/";
+
 export default {
     data() {
         return {
@@ -134,7 +139,7 @@ export default {
     },
     methods: {
         refreshCustomerData(){
-            axios.get("https://localhost:44326/api/"+"customer")
+            axios.get(API_URL+"customer")
             .then((response) => {
                 this.customers = response.data;
             }); 
@@ -160,7 +165,7 @@ export default {
         this.ProjectId=cus.ProjectId;
     },
     createClick(){
-        axios.post("https://localhost:44326/api/"+"customer",{
+        axios.post(API_URL+"customer",{
             CustomerName:this.CustomerName,
             CustomerCVRnumber:this.CustomerCVRnumber,
             CustomerPhoneNumber:this.CustomerPhoneNumber,
@@ -174,7 +179,7 @@ export default {
         });
     },
     createServiceClick(){
-        axios.post("https://localhost:44326/api/"+"services",{
+        axios.post(API_URL+"services",{
             ServiceName:this.ServiceName   
         })
         .then((response) => {
@@ -183,7 +188,7 @@ export default {
         });
     },
     updateClick(){
-        axios.put("https://localhost:44326/api/"+"customer",{
+        axios.put(API_URL+"customer",{
             CustomerId:this.CustomerId,
             CustomerName:this.CustomerName,
             CustomerCVRnumber:this.CustomerCVRnumber,
@@ -201,14 +206,14 @@ export default {
         if(!confirm("Are you sure?")){
             return;
         }
-        axios.delete("https://localhost:44326/api/"+"customer/"+id)
+        axios.delete(API_URL+"customer/"+id)
         .then((response) => {
             this.refreshCustomerData();
             alert(response.data);
         });
     },
     getProfile(id){
-        axios.get("https://localhost:44326/api/"+"customer/"+id)
+        axios.get(API_URL+"customer/"+id)
         .then((response) => {
             this.customers = response.data;
         });
