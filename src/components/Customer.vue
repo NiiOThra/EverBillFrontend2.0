@@ -48,16 +48,16 @@
             Service id
         </th>
         <th>
-            Service name
+            Service
         </th>
         <th>
-            Service Price
+            Price
         </th>
         <th>
-            Service Qty
+            Quantity
         </th>
         <th>
-            Service total
+            Total price
         </th>
         <th>
             CustomerId
@@ -79,11 +79,12 @@
 
 
 <form @submit.prevent="submitForm">
-    <td class="serviceName">Name:<input v-model="ServiceName" type="text" /></td>
-    <td class="servicePrice">Price: <input type="text" v-model="ServicePrice"></td>
-    <td class="serviceQty">Qty: <input type="text" v-model="ServiceQty"></td>
-    <td class="customerId">CustomerId: <input type="text" v-model="CustomerId"></td>
-    <td class="serviceTotal">Total: {{ (ServiceTotal = ServiceQty * ServicePrice) }} <button type="submit">Submit</button></td>
+    <td class="serviceName">Service name: <br><input v-model="ServiceName" type="text" /></td>
+    <td class="servicePrice">Service price: <br><input type="text" v-model="ServicePrice"></td>
+    <td class="serviceQty">Quantity: <br><input type="text" v-model="ServiceQty"></td>
+    <td class="customerId">CustomerId: <br>{{ CustomerId }}</td>
+    <td class="serviceTotal">Total: <br>{{ (ServiceTotal = ServiceQty * ServicePrice) }}</td> 
+    <td><button type="submit">Submit</button></td>
     
 </form>
 
