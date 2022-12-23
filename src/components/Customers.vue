@@ -152,7 +152,6 @@ export default {
         this.CustomerPhoneNumber="";
         this.CustomerEmail="";
         this.CustomerAddress="";
-        this.ProjectId=0;
     },
     editClick(cus){
         this.customerModalTitle="Edit customer";
@@ -162,7 +161,6 @@ export default {
         this.CustomerPhoneNumber=cus.CustomerPhoneNumber;
         this.CustomerEmail=cus.CustomerEmail;
         this.CustomerAddress=cus.CustomerAddress;
-        this.ProjectId=cus.ProjectId;
     },
     createClick(){
         axios.post(API_URL+"customer",{
@@ -170,8 +168,7 @@ export default {
             CustomerCVRnumber:this.CustomerCVRnumber,
             CustomerPhoneNumber:this.CustomerPhoneNumber,
             CustomerEmail:this.CustomerEmail,
-            CustomerAddress:this.CustomerAddress,    
-            ProjectId:this.ProjectId    
+            CustomerAddress:this.CustomerAddress,
         })
         .then((response) => {
             this.refreshCustomerData();
@@ -195,7 +192,6 @@ export default {
             CustomerPhoneNumber:this.CustomerPhoneNumber,
             CustomerEmail:this.CustomerEmail,
             CustomerAddress:this.CustomerAddress,
-            ProjectId:this.ProjectId
         })
         .then((response) => {
             this.refreshCustomerData();
