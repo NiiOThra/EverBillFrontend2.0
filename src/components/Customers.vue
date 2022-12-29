@@ -32,7 +32,7 @@
     </tr>
 </thead>
 <tbody>
-    <tr v-for="cus in customers" :key="cus.id" class="customer">
+    <tr v-for="cus in customers" :key="cus" class="customer">
         <td>{{cus.CustomerId}}</td>
         <td>
             <div>
@@ -45,7 +45,7 @@
         <td>{{cus.CustomerAddress}}</td>
         <td>{{cus.ProjectId}}</td>-->
         <td>
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="editClick(cus)">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#customerModal" @click="editClick(cus)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -68,10 +68,10 @@
 <button type="button" 
 class="btn btn-primary m-2 fload-end"
 data-bs-toggle="modal"
-data-bs-target="#exampleModal"
+data-bs-target="#customerModal"
 @click="addClick()">Add Customer</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
     <div class="modal-header">
@@ -83,7 +83,7 @@ data-bs-target="#exampleModal"
 
         <div class="input-group mb-3">
             <span class="input-group-text">Name</span>
-            <input type="text" class="form-control" v-model="CustomerName">
+            <input type="text" class="form-control" v-model="CustomerName" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">CVR-number</span>
@@ -91,15 +91,15 @@ data-bs-target="#exampleModal"
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Phone Number</span>
-            <input type="text" class="form-control" v-model="CustomerPhoneNumber">
+            <input type="text" class="form-control" v-model="CustomerPhoneNumber" minlength="8" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Email</span>
-            <input type="text" class="form-control" v-model="CustomerEmail">
+            <input type="email" class="form-control" v-model="CustomerEmail" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Customer Address</span>
-            <input type="text" class="form-control" v-model="CustomerAddress">
+            <input type="text" class="form-control" v-model="CustomerAddress" required>
         </div>
 
         <button type="button" @click="createClick()" v-if="CustomerId==0" class="btn btn-primary">Create</button>
