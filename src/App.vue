@@ -1,11 +1,8 @@
 <template>
   <div id="app" class="container">
-        <h3 class="d-flex justify-content-center" style="margin-top: 45px;">
-            EverBill - Vue
+        <h3 class="d-flex justify-content-center">
+            <img src="./assets/everbill_logo.png" alt="">
         </h3>
-        <h5 class="d-flex justify-content-center" style="margin-bottom: 10px;">
-            Billing Portal
-        </h5>
 
         <nav class="navbar navbar-expand-sm justify-content-center" style="margin-bottom: 20px;">
             <ul class="navbar-nav">
@@ -63,10 +60,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .rl {
   align-content: left;
+}
+
+img {
+  width: 500px;
 }
 </style>

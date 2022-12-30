@@ -2,7 +2,7 @@
 <div>
 
 
-<table class="table table-striped" style="text-align: center;">
+<table class="table table-bordered" style="text-align: center;">
 <thead>
     <tr>
         <th>
