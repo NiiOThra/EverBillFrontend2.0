@@ -7,10 +7,10 @@
         <nav class="navbar navbar-expand-sm justify-content-center" style="margin-bottom: 20px;">
             <ul class="navbar-nav">
                 <li class="nav-item m-1">
-                    <router-link class="btn btn-outline-primary" to="/">Home</router-link>
+                    <router-link class="btn btn-outline-primary" to="/">Customers</router-link>
                 </li>
                 <li class="nav-item m-1">
-                    <router-link class="btn btn-outline-primary" to="/customers">Customers</router-link>
+                    <router-link class="btn btn-outline-primary" to="/charts">Charts</router-link>
                 </li>
                 <!--<li class="nav-item m-1">
                     <router-link class="btn btn-outline-primary" to="/services">Services</router-link>
@@ -26,20 +26,18 @@
 
 <script>
 import axios from "axios"
-import HelloWorld from './components/HelloWorld.vue'
-import Home from './components/Home.vue'
+import Charts from './components/Charts.vue'
 import Services from './components/Services.vue'
 import Customers from './components/Customers.vue'
-import Customer from './components/Customer.vue'
+import SingleCustomerPage from './components/SingleCustomerPage.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Home,
+    Charts,
     Services,
     Customers,
-    Customer    
+    SingleCustomerPage    
   },
   data() {
     return {
