@@ -184,9 +184,6 @@ export default {
         axios.get(API_URL+"customer/"+this.CustomerId)
         .then(response=> this.customers = response.data),
        
-        axios.get(API_URL+"services")
-        .then(response=> this.services = response.data),
-        
         axios.get(API_URL+"servicecustomer/"+this.CustomerId)
         .then(response=> this.servicecustomer = response.data),
 

@@ -17,18 +17,6 @@
         <th>
             Options
         </th>
-        <!--<th>
-            Customer phonenumber
-        </th>
-        <th>
-            Customer email
-        </th>
-        <th>
-            Customer address
-        </th>
-        <th>
-            ProjectId
-        </th>-->
     </tr>
 </thead>
 <tbody>
@@ -40,10 +28,6 @@
             </div>
         </td>
         <td>{{cus.CustomerCVRnumber}}</td>
-        <!--<td>{{cus.CustomerPhoneNumber}}</td>
-        <td>{{cus.CustomerEmail}}</td> 
-        <td>{{cus.CustomerAddress}}</td>
-        <td>{{cus.ProjectId}}</td>-->
         <td>
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#customerModal" @click="editClick(cus)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -65,17 +49,15 @@
 </table>
 
 
-<button type="button" 
-class="btn btn-primary m-2 fload-end"
-data-bs-toggle="modal"
-data-bs-target="#customerModal"
+<button type="button" class="btn btn-primary m-2 fload-end" 
+data-bs-toggle="modal" data-bs-target="#customerModal" 
 @click="addClick()">Add Customer</button>
 
-<div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg modal-dialog-centered">
 <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{customerModalTitle}}</h5>
+        <h5 class="modal-title" id="customerModalLabel">{{customerModalTitle}}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
 
@@ -87,11 +69,11 @@ data-bs-target="#customerModal"
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">CVR-number</span>
-            <input type="text" class="form-control" v-model="CustomerCVRnumber">
+            <input type="text" class="form-control" v-model="CustomerCVRnumber" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Phone Number</span>
-            <input type="text" class="form-control" v-model="CustomerPhoneNumber" minlength="8" required>
+            <input type="text" class="form-control" v-model="CustomerPhoneNumber" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Email</span>
