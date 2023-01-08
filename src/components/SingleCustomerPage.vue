@@ -58,9 +58,6 @@
         <th>
             Total price
         </th>
-        <!--<th>
-            CustomerId
-        </th>-->
         <th>
             Options
         </th>
@@ -73,7 +70,6 @@
         <td>{{ servcus.ServicePrice }}</td>
         <td>{{ servcus.ServiceQty }}</td>
         <td>{{ servcus.ServiceTotal }}</td>
-        <!--<td>{{ servcus.CustomerId }}</td>-->
         <td>
             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#serviceModal" @click="editClick(servcus)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
