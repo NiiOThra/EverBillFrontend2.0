@@ -63,7 +63,7 @@
         </th>
     </tr>
 </thead>
-<tbody v-for="servcus in servicecustomer" :key="servcus.CustomerId" class="servicesTable">
+<tbody v-for="servcus in servicecustomer" :key="servcus" class="servicesTable">
     <tr class="serviceTr">
         <td>{{ servcus.ServiceId }}</td>
         <td>{{ servcus.ServiceName }}</td>
@@ -167,19 +167,18 @@ export default {
             ServiceName:'',
             ServiceQty:'',
             ServicePrice:'',
+            ServiceTotal:0,
             EditServiceName:'',
             EditServiceQty:'',
             EditServicePrice:'',
             EditServiceTotal:0,
-            ServiceTotal:0,
-            actualTotal:0,
             serviceModalTitle:"",
         };
     },
     mounted() {
         axios.get(API_URL+"customer/"+this.CustomerId)
         .then(response=> this.customers = response.data),
-       
+        
         axios.get(API_URL+"servicecustomer/"+this.CustomerId)
         .then(response=> this.servicecustomer = response.data),
 
